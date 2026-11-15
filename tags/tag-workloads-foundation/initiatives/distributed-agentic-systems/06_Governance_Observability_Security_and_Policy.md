@@ -3,7 +3,7 @@
 Status: outline. Owner: Elankumaran Srinivasan.
 
 - OpenTelemetry GenAI semantic conventions and spans; metrics, events, logs and traces; baggage
-- LLM cost, token and latency tracking. Gap: these numbers are not comparable across implementations today, so an operator cannot bound spend from telemetry
+- LLM cost, token and latency tracking. Gap: these numbers are not comparable across implementations today, so an operator cannot bound spend from telemetry (see 6b)
 - Policy and compliance as code, with OSCAL Compass as one implementation (Anca Sailer)
 - 6a. Verifiable per-call evidence (subsection, proposed by Sankalp Gilda): independently verifiable records of gateway behavior that third parties can audit; vendor neutral, anchored on in-toto and the OWASP agent control work
 - 6b. Telemetry schema and cost (subsection, Elankumaran Srinivasan): a cost figure carries its unit and its source, and a declared budget is checked after the run from its record; vendor neutral, anchored on the OpenTelemetry GenAI conventions and the FinOps FOCUS specification
@@ -21,9 +21,9 @@ Each requirement is a checklist item plus one line on how an implementer checks 
 
 Requirement numbering is scoped to this subsection. A cross-framework count of consumed iterations stays out of scope, because each implementation binds its limit to a different native unit and the resulting counts are not comparable.
 
-How an implementer checks it today. OpenTelemetry's own GenAI conformance report is the neutral surface. Read at revision `6807b1d5e676`, it covers 57 instrumented GenAI targets, of which 3 emit a cost figure at all, under 12 attribute names and 2 metric names across four namespaces, none of those 14 names appears in the 63-attribute, 17-signal GenAI registry, and one of the four is a namespace the registry itself owns. A crosswalk of the emitted names accompanies this subsection so that 6a's per-call record and this schema do not specify the same value twice. Both checks are executable. R1's is a corpus of thirty vectors, ten accept and twenty reject, covering every clause of the requirement. The aggregator refuses to return a total where any clause is unmet, so a partial sum of the valid records is never produced. Its verdicts are invariant under renaming every cost field, which is what makes it a check on the requirement and not on a spelling. R2's runs against a counterparty that ignores the stop request, since one that honours it makes the mechanisms indistinguishable.
+How an implementer checks it today: OpenTelemetry's own GenAI conformance report is the neutral surface. Read at revision `6807b1d5e676`, it covers 57 instrumented GenAI targets, of which 3 emit a cost figure at all, under 12 attribute names and 2 metric names across four namespaces, none of those 14 names appears in the 63-attribute, 17-signal GenAI registry, and one of the four is a namespace the registry itself owns.
 
-Neither requirement names an attribute. The name the ecosystem already queries for spend is a leaf, so it cannot carry a currency or a source. The widest cost vocabulary among the three emitters runs to ten attribute names in a namespace the registry does not define, and not one of the three records a currency or a source anywhere.
+Neither requirement names an attribute. The name the ecosystem already queries for spend is a leaf, so it cannot carry a currency or a source. The widest cost vocabulary among the three emitters runs to ten attribute names in a namespace the registry does not define, and no emitter carries a currency or a source as a field beside the amount. The one emitter that declares a currency does so by hardcoding the unit on a metric, which an aggregator cannot read per record.
 
 Builds on: the OpenTelemetry GenAI semantic conventions and their conformance report, and the FinOps FOCUS specification, whose v1.0 `BillingCurrency` column is already normative on the point this requirement needs, in requiring that it be present, be non-null, and conform to a currency-code format. The vocabulary is reused and not reinvented. 6a's per-call binding is how a reported cost points back to its source.
 
