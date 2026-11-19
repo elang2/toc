@@ -1,8 +1,8 @@
 # Stream plan: governance, observability, security and policy
 
 Technical chapter: [Chapter 06](../06_Governance_Observability_Security_and_Policy.md)
-Stream owner: Elankumaran Srinivasan (@elang2), as recorded in the [initiative README](../README.md#workstreams)
-Team: Elankumaran Srinivasan (@elang2), owner, confirmed; Sankalp Gilda (@astrogilda), 6a author, confirmed; Anca Sailer, confirmed for OSCAL Compass; contributor seats open (see section 2)
+Stream owner: Elankumaran Srinivasan (@elang2), as recorded in the [initiative README](../README.md#workstreams). The working document's older outline header still names Sankalp Gilda as section 6 owner, from before the initiative moved into this repository; 6a remains his and this plan does not change that.
+Team: Elankumaran Srinivasan (@elang2), owner, confirmed; Sankalp Gilda (@astrogilda), 6a author, confirmed; Anca Sailer and Vikas Agarwal, confirmed for OSCAL Compass; contributor seats open (see section 2)
 Status: scoping
 Last updated: 2026-11-18
 Next walkthrough: November 19, 2026 session
@@ -30,7 +30,7 @@ The chapter does not define attribute names, select products, or treat telemetry
 |---|---|---|---|
 | Elankumaran Srinivasan (@elang2) | OpenTelemetry GenAI conventions, cost and budget measurement across agent frameworks, differential testing | Owner; scope, 6b telemetry schema and cost, cross-stream coordination | Confirmed |
 | Sankalp Gilda (@astrogilda) | Verifiable evidence, in-toto and DSSE, test-vector corpora | 6a verifiable per-call evidence ([#2369](https://github.com/cncf/toc/pull/2369)) | Confirmed, for 6a |
-| Anca Sailer | Safety guardrails, compliance as code and policy as code; OSCAL Compass as an implementation | OSCAL Compass into this stream, per the [October 8 action](../meeting-notes/2026-10-08.md); the wider policy and compliance subsection is scope to confirm with her | Confirmed, for OSCAL Compass |
+| Anca Sailer, Vikas Agarwal | Safety guardrails, compliance as code and policy as code; OSCAL Compass as an implementation | OSCAL Compass into this stream, per the [October 8 action](../meeting-notes/2026-10-08.md); the wider policy and compliance subsection is scope to confirm with them | Confirmed, for OSCAL Compass. Yuji Watanabe is recorded against the same focus area and has not been asked |
 | Open seat | Workload identity, delegated authority, authorization | Control-responsibility mapping for identity and delegation; the boundary with chapter 03 | Open |
 | Open seat | Security practitioner, ideally with agent deployments in production | Threat review of the control mapping; what the evidence patterns do not cover | Open |
 | Open seat | End-user operator running agents at scale | Whether the telemetry guidance answers an operator's actual questions, and what it costs to emit | Open |
@@ -61,7 +61,7 @@ Only people who have agreed are listed, and agreement means a session record or 
 | v0.1 | Where are identity, delegation, approval and least-privilege policies enforced, and which of those are currently unowned? | Cross-stream control responsibility mapping | Open seat, identity and authorization |
 | v0.1 | Which telemetry supports task diagnosis and comparable cost measurement, and with what limits? | Semantic-convention and measurement guidance (6b) | @elang2, drafted, see section 5 |
 | v0.1 | What evidence supports auditing a delegated action without exposing unnecessary sensitive data? | Evidence pattern, trust assumptions and trade-offs (6a) | @astrogilda, drafted, see section 5 |
-| v0.1 | How are policy and evaluation decisions, and failure behaviour, made explicit and reviewable? | Governance decision guidance | Anca Sailer, per the October 8 action; scope to confirm with her |
+| v0.1 | How are policy and evaluation decisions, and failure behaviour, made explicit and reviewable? | Governance decision guidance | Anca Sailer and Vikas Agarwal, per the October 8 action; scope to confirm with them |
 | Later | Does any of this hold across clusters, or when the authorization or telemetry path is unreachable? | Recorded limitations for chapter 08 | To agree |
 
 ## 4. Starting knowledge and sources
@@ -89,7 +89,7 @@ Only people who have agreed are listed, and agreement means a session record or 
 | 6a verifiable per-call evidence outline, R1 to R5 | @astrogilda | Awaiting approver review | Open, needs approval | [cncf/toc#2369](https://github.com/cncf/toc/pull/2369) |
 | 6b telemetry schema and cost outline, two requirements | @elang2 | To merge after 6a, so 6b follows it in the file | Drafted, to be filed | To be filed |
 | Cross-stream control responsibility mapping | Open seat, identity and authorization | To agree at kickoff | Proposed | Not yet created |
-| Policy and compliance decision guidance | Anca Sailer, scope to confirm | To agree; the action dates from October 8 | Proposed | Not yet created |
+| Policy and compliance decision guidance | Anca Sailer and Vikas Agarwal, scope to confirm | To agree; the action dates from October 8 | Proposed | Not yet created |
 | Confirm subsection boundaries with chapters 02, 03, 04, 05 and 07 | @elang2, with each stream owner | Within two sessions | Proposed | Not yet created |
 | Limitations and gap inputs for chapter 08 | Stream, as findings land | Progressive | Proposed | Not yet created |
 
@@ -97,7 +97,7 @@ Create issues for substantive work once scoped; keep detailed tasks in those iss
 
 ## 6. Current biweekly walkthrough — November 19, 2026
 
-- Changes or findings: no session notes exist after [October 22](../meeting-notes/2026-10-22.md), which set November 5 with the target "first drafts"; `meeting-notes/2026-11-05.md` returns 404. So no cross-stream boundary in section 3 has been agreed at a recorded session, and every one is proposed. 6a is on [#2369](https://github.com/cncf/toc/pull/2369) and awaiting an approver. 6b is drafted against the same file and will be opened to follow it. Both carry requirements as checklist items with an implementer check, which is the form proposed for this chapter.
+- Changes or findings: the November 5 session happened and its record is in the working document rather than in `meeting-notes/`, which holds nothing after October 22. At that session the initiative lead asked each stream owner what is written, what is blocked, and what lands by November 19, and this stream was not represented in the room. That question is what this plan answers, and the walkthrough below is the first time this stream answers it. No cross-stream boundary in section 3 has been agreed at a recorded session, so every one is marked proposed. 6a is on [#2369](https://github.com/cncf/toc/pull/2369) and awaiting an approver. 6b is drafted against the same file and will be opened to follow it. Both carry requirements as checklist items with an implementer check, which is the form proposed for this chapter.
 - Suggested material: trace identity, policy check, human approval, telemetry and evidence through the [shared reference scenario](./README.md#proposed-shared-reference-scenario) for one side-effecting tool call, and stop at each point where the chapter currently has no owner.
 - Feedback needed: what happens when the authorization or telemetry path is unreachable, and which claims the remaining evidence can still support. Also whether the two drafted subsections cover the chapter's cost and policy bullets or leave a third subsection needed.
 - Blocker / help needed: an approver is needed on #2369, which has never received a human review comment; the identity and authorization seat is unfilled; and the boundaries with chapters 02 to 05 are proposed rather than agreed.
