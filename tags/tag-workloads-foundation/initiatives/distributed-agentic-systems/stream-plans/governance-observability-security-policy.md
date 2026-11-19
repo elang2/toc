@@ -30,7 +30,7 @@ The chapter does not define attribute names, select products, or treat telemetry
 |---|---|---|---|
 | Elankumaran Srinivasan (@elang2) | OpenTelemetry GenAI conventions, cost and budget measurement across agent frameworks, differential testing | Owner; scope, 6b telemetry schema and cost, cross-stream coordination | Confirmed |
 | Sankalp Gilda (@astrogilda) | Verifiable evidence, in-toto and DSSE, test-vector corpora | 6a verifiable per-call evidence ([#2369](https://github.com/cncf/toc/pull/2369)) | Confirmed, for 6a |
-| Anca Sailer, Vikas Agarwal | Safety guardrails, compliance as code and policy as code; OSCAL Compass as an implementation | OSCAL Compass into this stream, per the [October 8 action](../meeting-notes/2026-10-08.md); the wider policy and compliance subsection is scope to confirm with them | Confirmed, for OSCAL Compass. Yuji Watanabe is recorded against the same focus area and has not been asked |
+| Anca Sailer, Vikas Agarwal | Safety guardrails, compliance as code and policy as code; OSCAL Compass as an implementation | OSCAL Compass into this stream; the wider policy and compliance subsection is scope to confirm with them | Confirmed, for OSCAL Compass. Anca Sailer per the [October 8 action](../meeting-notes/2026-10-08.md), which names her alone; Vikas Agarwal per the contributor register and the working document's owner table. Yuji Watanabe is recorded against the same focus area and has not been asked |
 | Open seat | Workload identity, delegated authority, authorization | Control-responsibility mapping for identity and delegation; the boundary with chapter 03 | Open |
 | Open seat | Security practitioner, ideally with agent deployments in production | Threat review of the control mapping; what the evidence patterns do not cover | Open |
 | Open seat | End-user operator running agents at scale | Whether the telemetry guidance answers an operator's actual questions, and what it costs to emit | Open |
@@ -61,7 +61,7 @@ Only people who have agreed are listed, and agreement means a session record or 
 | v0.1 | Where are identity, delegation, approval and least-privilege policies enforced, and which of those are currently unowned? | Cross-stream control responsibility mapping | Open seat, identity and authorization |
 | v0.1 | Which telemetry supports task diagnosis and comparable cost measurement, and with what limits? | Semantic-convention and measurement guidance (6b) | @elang2, drafted, see section 5 |
 | v0.1 | What evidence supports auditing a delegated action without exposing unnecessary sensitive data? | Evidence pattern, trust assumptions and trade-offs (6a) | @astrogilda, drafted, see section 5 |
-| v0.1 | How are policy and evaluation decisions, and failure behaviour, made explicit and reviewable? | Governance decision guidance | Anca Sailer and Vikas Agarwal, per the October 8 action; scope to confirm with them |
+| v0.1 | How are policy and evaluation decisions, and failure behaviour, made explicit and reviewable? | Governance decision guidance | Anca Sailer, per the October 8 action; Vikas Agarwal, per the register; scope to confirm with both |
 | Later | Does any of this hold across clusters, or when the authorization or telemetry path is unreachable? | Recorded limitations for chapter 08 | To agree |
 
 ## 4. Starting knowledge and sources
@@ -89,7 +89,7 @@ Only people who have agreed are listed, and agreement means a session record or 
 | 6a verifiable per-call evidence outline, R1 to R5 | @astrogilda | Awaiting approver review | Open, needs approval | [cncf/toc#2369](https://github.com/cncf/toc/pull/2369) |
 | 6b telemetry schema and cost outline, two requirements | @elang2 | To merge after 6a, so 6b follows it in the file | Drafted, to be filed | To be filed |
 | Cross-stream control responsibility mapping | Open seat, identity and authorization | To agree at kickoff | Proposed | Not yet created |
-| Policy and compliance decision guidance | Anca Sailer and Vikas Agarwal, scope to confirm | To agree; the action dates from October 8 | Proposed | Not yet created |
+| Policy and compliance decision guidance | Anca Sailer and Vikas Agarwal, scope to confirm | To agree; Anca's action dates from October 8, Vikas is from the register | Proposed | Not yet created |
 | Confirm subsection boundaries with chapters 02, 03, 04, 05 and 07 | @elang2, with each stream owner | Within two sessions | Proposed | Not yet created |
 | Limitations and gap inputs for chapter 08 | Stream, as findings land | Progressive | Proposed | Not yet created |
 
